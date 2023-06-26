@@ -17,4 +17,6 @@ pero si es necesaria la imagen normal
 sobre las opciones, solo la opcion de cuentas esta funcional las demas son solo desplegables, sin funcion
 excepto la opcion ''Clases'' subyacente de la opcion ''Informacion sobre el juego''.
 
+Sobre la opcion cuenta, todas esas opciones sirven, excepto la opcion '' configuracion de mi cuenta'' 
+
 # Este es un comentario y no se mostrará en la versión final
