@@ -6,6 +6,9 @@ Usuario administrativo: user: Andrezvd123 password: Andrezvd123
 
 Usuario operador : user : operador123 password: operador123
 
+antes de hacer el python manage.py runserver se necesita instalar Pillow
+python -m pip install Pillow
+
 Lous usuarios normales puede registrarlos usted mismo toda la pagina es intuitiva
 tanto el registro como el login estan funcionando
 
