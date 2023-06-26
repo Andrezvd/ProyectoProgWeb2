@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .hyper-espaciesito{
+    height: 10px;
+  }
+  
+  .parrafito {
+    font-size: 16px; /* Tamaño de fuente inicial */
+    text-align: center;
+    width: 50%;
+    margin-left: 340px;
+  }
+  
+  @media (max-width: 768px) {
+    p {
+      font-size: 14px; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    p {
+      font-size: 12px; /* Tamaño de fuente para pantallas aún más pequeñas */
+    }
+  }
+
+.card{
+    margin-top: 5px;
+    width: 18rem;
+    margin-left: 50px;
+}
+
+
+.imagen_tarjeta{
+    height: 300px;
+}
+
+.estado_label{
+    width: 30%;
+    align-self: center;
+}
+
+.espacio{
+    height: 50px;
+}
+
+.body{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../multimedia/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    z-index: -100;
+
+  }
+
+  #myVideo{
+    display: none;
+  }
+
+  .display-2{
+    text-align: center;
+    font-size: 3.2249999999999996rem;
+    line-height: 1.5;
+    font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
+    color: #f0f0f0;
+    text-shadow: 10px 10px 1px transparent, 0 1px 2px rgba(0,0,0,.9);
+    font-weight: 700;
+  }
+
+  

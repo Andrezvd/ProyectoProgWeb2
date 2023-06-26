@@ -1,0 +1,61 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+{% block extrahead %} 
+<title>Crear Personaje</title>
+<link rel="stylesheet" href="{% static '/css/crearPersonaje.css' %}" >
+{% endblock extrahead%}
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+  <div {% if message.tags == 'warning' %} class="alert alert-warning alert-message"{% else %} class="alert alert-success alert-message" {% endif %}>
+      <b class="message-alert">{{ message }}</b>       
+  </div>	
+{% endfor %}
+{% endif %}
+<div class="contenedor-espacio">
+  <div class="espacio-peque"></div>
+</div>
+<h1 class="display-2 text-center" id="title">Crear Personaje</h1>
+<div class="contenedor-crear">
+  <form method="POST" action="{% url 'crearPersonaje' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="nivel">Nivel:</label>
+      <input type="number" class="form-control" id="nivel" name="nivel" required>
+    </div>
+    <div class="form-group">
+      <label for="clase">Clase:</label>
+      <input type="text" class="form-control" id="clase" name="clase" required>
+    </div>
+    <div class="form-group">
+      <label for="especializacion">Especialización:</label>
+      <input type="text" class="form-control" id="especializacion" name="especializacion" required>
+    </div>
+    <div class="form-group">
+      <label for="imagen">Imagen:</label>
+      <input type="file" class="form-control" id="imagen" name="imagen">
+    </div>
+    <div class="form-group">
+      <label for="imagen">Imagen3D:</label>
+      <input type="file" class="form-control" id="imagen3d" name="imagen3d">
+    </div>
+    <div class="contenedor-espacio">
+      <div class="espacio-entre"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Personaje</button>
+  </form>
+</div>
+<div class="contenedor-espacio">
+  <div class="espacio-peque"></div>
+</div>
+<div class="contenedor-espacio">
+  <div class="espacio-peque"></div>
+</div>
+
+{% endblock content%}

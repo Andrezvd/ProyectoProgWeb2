@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!--EJEMPLO ADAPTADO DE https://www.w3schools.com/howto/howto_css_login_form.asp -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="{% static '/iconos/galaxy.ico.ico' %}">
+<title>GSO Login</title>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+ integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="Stylesheet" type="text/css" href="{% static '/CSS/Stylos.css' %}">
+<link rel="Stylesheet" type="text/css" href="{% static '/CSS/login.css' %}">
+</head>
+
+
+<body class="login">
+
+
+<div class="espace-login"></div>
+<div class="contenedor">
+
+    <div class="ingreso h1-important">Ingresar A Galaxy Sword</div>
+    <div class="espacio-entre-largo"></div>
+    <form class="formAction" action="{% url 'login' %}" method="post"> 
+    {% csrf_token %}
+    <div class="container">
+        {% if form.errors %}
+        <p>Nombre de Usuario o Contraseña Incorrectos.</p>
+        {% endif %}
+
+        {% if next %}
+            {% if user.is_authenticated %}
+            <p>Tu cuenta no tiene acceso a esta página, si tienes otra cuenta por favor
+                ingresa tus credenciales.</p>
+            {% else %}
+            <p>Por favor, ingresar credenciales para ver la página.</p>
+            {% endif %}
+        {% endif %}
+
+        <label for="uname"><b>Nombre Usuario</b></label>
+        {{ form.username }}
+
+        <label for="psw"><b>Contraseña</b></label>
+        {{ form.password }}
+        <div class="button-container">
+          <button type="submit">Ingresar</button>
+        </div>
+        <label class="labelLogin">
+        
+        <div class="remember"><input type="checkbox" checked="checked" name="remember"> Recuerdame</div> 
+        <p class="nc">No tienes cuenta? <a href="{% url 'registro' %}">Registrarse</a></p>
+        <p class="nc"><a href="{% url 'index' %}">Volver Al Inicio</a></p>
+        </label>
+    </div>
+
+    </form>
+</div>
+<div class="espace-login"></div>
+
+
+
+
+<footer id="footer">
+  <div class="contenedor-social">
+    <div class="social-panel">
+      <div class="redes-sociales">
+        Seguir a Galaxy
+      </div>
+      <div class="links-social">
+        <a class="social-link" href="#"><i class="fa-brands fa-facebook-f" style="color: #f8b700;"></i></a>
+        <a class="social-link" href="#"><i class="fa-brands fa-discord" style="color: #f8b700;"></i></a>
+        <a class="social-link" href="#"><i class="fa-brands fa-instagram" style="color: #f8b700;"></i></a>
+        <a class="social-link" href="#"><i class="fa-brands fa-github" style="color: #f8b700;"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="super-espaciesito"></div>
+  <div class="contenedor-andrez-footer-original">
+    <div class="espacio-entre"></div>
+    <div class="espacio-entre"></div>
+    <div class="andrez-footer-original">
+      <div class="logo-footer">
+        <a class="a-img" href="#"><img class="footer-img" src="{% static '/iconos/galaxy.ico.ico' %}"></a>
+      </div>
+      <div class="espacio-entre"></div>
+      <div class="requerimientos">
+        <a href="">EMPLEO</a>
+        <a href="">INFORMACION</a>
+        <a href="">ASISTENCIA</a>
+        <a href="">CONTACTO</a>
+        <a href="">PRENSA</a>
+        <a href="">API</a>
+      </div>
+
+      <div class="espacio-entre"></div>
+      <div class="espacio-entre"></div>
+
+      <div class="aplicacion-juegos">
+        <h6 class="aplicacion">
+          Juego disponible en el nervGear:
+          <a href="#">Donde comprar nervgear</a>
+          </h6>
+      </div>
+
+      <div class="espacio-entre"></div>
+      <div class="espacio-entre"></div>
+
+      <div class="terminos-y-condiciones">
+        <h6 class="terminos">
+          ©2023 Galaxy Sword, Inc.
+          Todos los derechos reservados.
+          Todas las <a href="#">marcas comerciales</a> a las 
+          que se hace referencia son propiedad
+          mia mia y solamente mia Andrez Olivar.
+        </h6>
+      </div>
+      <div class="link-terminos">
+        <a href="#">Privacidad</a>
+        <a href="#">Legal</a>
+        <a href="#">Términos</a>
+        <a href="#">Cookie Policity</a>
+        <a href="#">Ajustes de Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://kit.fontawesome.com/380cbd1a79.js" crossorigin="anonymous"></script>
+</body>
+</html>

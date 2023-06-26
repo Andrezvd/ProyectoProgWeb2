@@ -1,0 +1,46 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+{% block extrahead %} 
+<title>GSO Character</title>
+<link rel="stylesheet" href="{% static '/css/personajes.css' %}" >
+{% endblock extrahead%}
+
+{% block content %}
+
+{% if tiene_personaje %}
+<div class="contenedor-espacio">
+  <div class="espacio-peque"></div>
+</div>
+  <div class="contenedor-personaje">
+    <div class="desc-personaje">
+      <h1>Mi Personaje</h1>
+      <p>Nombre: {{ personaje.nombre }}</p>
+      <p>Nivel: {{ personaje.nivel }}</p>
+      <p>Clase: {{ personaje.clase }}</p>
+      <p>Especialización: {{ personaje.especializacion }}</p>
+    </div>
+    <div class="imagen-personaje">
+    <img class="imagen-personajes" src="{{ personaje.imagen.url }}" alt="Imagen de {{ personaje.nombre }}">
+    </div>
+  </div>
+  
+  <!-- Aquí puedes mostrar otros detalles del personaje, como nivel, logros, etc. -->
+{% else %}
+<div class="contenedor-espacio">
+  <div class="espacio-peque"></div>
+</div>
+<div class="centrar">
+  <h1 class="display-2 text-center" id="title">Sin personajes disponibles</h1>
+  <div class="input">
+    <span class="input-group-btn">
+      <a href="{% url 'crearPersonaje' %}" class="b"><button class="btn btn-secondary" type="button" aria-label="">Crear Personaje</button></a>
+    </span>
+</div>
+
+  <!-- Aquí puedes mostrar un formulario o un botón para crear el personaje -->
+
+{% endif %}
+
+<div class="espace-huge"></div>
+{% endblock content%}
