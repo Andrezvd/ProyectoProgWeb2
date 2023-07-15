@@ -119,10 +119,11 @@
     A DAR LOS PERMISOS PARA LOS USUARIOS LOGUEADOS
 -->
 
-      <li id="desaparecerLupita" class="lupita"><a class="buscador" href="#"><i class="fa-solid fa-magnifying-glass" style="color: #fafafa;"></i></a></li>
+      
 
       {% if user.is_authenticated %}
 
+      <li id="desaparecerLupita" class="lupita"><i class="fa-solid fa-coins"></i> {{ request.user.galaxyCoins }}$</li>
       <li id="desaparecerCuenta" class="dropdown cuenta"><a class="ease-menu" href="#"><i id="hu" class="fa-regular fa-user"></i>{{ request.user.username }}<i class="fa-solid fa-chevron-down"id="ha"></i></a>
         <div class="dropdown-content">
           <div class="flechita"></div>
@@ -138,7 +139,7 @@
         </div>
 
       {% else %}
-
+      <li id="desaparecerLupita" class="lupita"><a class="buscador" href="#"><i class="fa-solid fa-magnifying-glass" style="color: #fafafa;"></i></a></li>
       <li id="desaparecerCuenta" class="dropdown cuenta"><a class="ease-menu" href="#"><i id="hu" class="fa-solid fa-user-slash"></i>Cuenta<i class="fa-solid fa-chevron-down"id="ha"></i></a>
         <div class="dropdown-content">
           <div class="flechita"></div>

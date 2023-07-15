@@ -14,9 +14,15 @@ def productosIndex(request):
     #consultar animales y categorias
     clases = Clase.objects.all()
     especializaciones = Especializacion.objects.all()
+    especializacion_id = request.GET.get('especializacion')
+    
+    # Filtrar los productos según la especialización seleccionada
+    if especializacion_id:
+        productos_list = Producto.objects.filter(ref_especializacion_id=especializacion_id)
+    else:
+        productos_list = Producto.objects.all()
 
     #Consultar productos
-    productos_list = Producto.objects.all()
     #Configurar paginación cada 9 productos
     paginator = Paginator(productos_list, 9)
 

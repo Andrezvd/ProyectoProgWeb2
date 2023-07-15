@@ -8,7 +8,16 @@
   .hyper-espaciesito{
     height: 10px;
   }
-  
+
+.espacio30{
+  height: 30px;
+}
+
+.espacio20{
+  height: 20px;
+}
+
+
   .parrafito {
     font-size: 16px; /* Tamaño de fuente inicial */
     text-align: center;
@@ -57,20 +66,34 @@
     background-size: cover;
     z-index: -100;
 
-  }
+}
 
-  #myVideo{
-    display: none;
-  }
+#myVideo{
+  display: none;
+}
 
-  .display-2{
+
+.form-control{
     text-align: center;
-    font-size: 3.2249999999999996rem;
-    line-height: 1.5;
-    font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
-    color: #f0f0f0;
-    text-shadow: 10px 10px 1px transparent, 0 1px 2px rgba(0,0,0,.9);
-    font-weight: 700;
-  }
+    color: white;
+    width: 100%;
+    /* border-radius: 20px; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px;
+    border: 5px solid black;
+    background-image: repeating-linear-gradient(180deg, #ee0404, #000000 100px);
+}
 
-  
+.img-arma{
+  width: 3%;
+}
+
+table{
+  font-size: 0.9rem;
+  background-color: #000000;
+}
+
+table,th,td{
+  color: aliceblue;
+}

@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +44,6 @@ INSTALLED_APPS = [
     'pedidos.apps.PedidosConfig',
     'productos.apps.ProductosConfig',
     'commons.apps.CommonsConfig',
-    'user.apps.UserConfig',
     'expancionesgso.apps.ExpancionesgsoConfig',
 ]
 
