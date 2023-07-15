@@ -1,0 +1,50 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+{% block extrahead %} 
+<title>GSO Expanciones</title>
+<link rel="stylesheet" href="{% static '/css/expanciones.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<div class="espacio"></div>
+<h1 class="display-2" id="title">Expanciones Disponibles</h1>
+<div class="espaciesito"></div>
+<p class="parrafito"></p>
+<div class="contenedor-ex">
+      {% for expancion in page_obj %}
+        <div class="card-ex">
+            <img src="{{ expancion.imagen.url }}" class="card-img-top imagen_tarjeta" alt="Sin Imágen">
+          <span class="badge rounded-pill text-bg-info estado_label">50% Off!</span>
+            <div class="card-body">
+              <h5 class="card-title">{{ expancion.nombre|upper }}</h5>
+              <p class="card-text">{{ expancion.descripcion }}</p>
+              <p class="card-text">{{ expancion.precio }} GalaxyCoins</p>
+              <a href="#" class="btn btn-success">Comprar</a>
+            </div>
+          </div>
+      {% endfor %}
+</div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>   
+    
+  </div>
+{% endblock content%}
+
+{% block extrajs %} 
+{% endblock extrajs%}

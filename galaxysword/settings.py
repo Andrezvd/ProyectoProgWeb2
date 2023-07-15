@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pedidos.apps.PedidosConfig',
     'productos.apps.ProductosConfig',
-    'commons.apps.CommonsConfig'
+    'commons.apps.CommonsConfig',
+    'user.apps.UserConfig',
+    'expancionesgso.apps.ExpancionesgsoConfig',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +64,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR,"commons/templates"),
-            os.path.join(BASE_DIR,'productos/templates)')
+            os.path.join(BASE_DIR,'productos/templates)'),
+            os.path.join(BASE_DIR,'expancionesgso/templates)')
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -110,6 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization

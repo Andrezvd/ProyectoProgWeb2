@@ -7,5 +7,10 @@ urlpatterns = [
     path('registro',views.registro,name='registro'),
     path('personajes/',views.personajes, name='personajes'),
     path('crearPj/',views.crearPersonaje, name='crearPersonaje'),
-    path('clases/',views.clases, name='clases')
+    path('clases/',views.clases, name='clases'),
+    path('resumen/',views.resumen, name='resumen'),
+    path('mundoabierto/',views.mundoabierto, name='mundoabierto'),
+    path('jugabilidad/',views.jugabilidad, name='jugabilidad'),
+    path('jdestacados/',views.jdestacados, name='jdestacados'),
+    path('historia/',views.historia, name='historia'),
 ]

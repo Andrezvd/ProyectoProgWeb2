@@ -21,6 +21,30 @@ def clases(request):
     context = {}
     return HttpResponse(template.render(context,request))
 
+def resumen(request):
+    template =  loader.get_template("resumen.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+def mundoabierto(request):
+    template = loader.get_template("mundoabierto.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+def jugabilidad(request):
+    template = loader.get_template("jugabilidad.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+def jdestacados(request):
+    template = loader.get_template("jdestacados.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+def historia(request):
+    template = loader.get_template("historia.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
 
 
 def personajes(request):

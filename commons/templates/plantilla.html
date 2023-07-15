@@ -71,16 +71,16 @@
           <div class="fondodropdown">
             <div class="hyper-espaciesito"></div>
             <a class="dropdown-item" href="{% url 'clases' %}">Clases</a>
-            <a class="dropdown-item" href="#">Resumen</a>
-            <a class="dropdown-item" href="#">Mundo abierto</a>
-            <a class="dropdown-item" href="#">Jugabilidad</a>
-            <a class="dropdown-item" href="#">Jugadores destacados</a>
+            <a class="dropdown-item" href="{% url 'resumen' %}">Resumen</a>
+            <a class="dropdown-item" href="{% url 'mundoabierto' %}">Mundo abierto</a>
+            <a class="dropdown-item" href="{% url 'jugabilidad' %}">Jugabilidad</a>
+            <a class="dropdown-item" href="{% url 'jdestacados' %}">Jugadores destacados</a>
             <div class="hyper-espaciesito"></div>
             <div class="transfondo-div">
               <div class="transfondo-edit">
                 transfondo
               </div>
-              <a class="dropdown-item black-font" href="#">Historia</a>
+              <a class="dropdown-item black-font" href="{% url 'historia' %}">Historia</a>
               <div class="hyper-espaciesito"></div>
             </div>
           </div>
@@ -90,17 +90,8 @@
     SEGUNDA OPCION EXPANCIONES
 -->
 
-      <li id="desaparecerExpa" class="dropdown"><a class="primer-grupo expa ease-menu" href="#">Expansiones<i class="fa-solid fa-chevron-down"></i></a>
-        <div class="dropdown-content">
-          <div class="flechita"></div>
-          <div class="fondodropdown">
-            <div class="hyper-espaciesito"></div>
-            <a class="dropdown-item" href="#">Piso de los Condenados</a>
-            <a class="dropdown-item" href="#">Piso de los Sobresalientes</a>
-            <a class="dropdown-item" href="#">Piso del tormento</a>
-            <div class="hyper-espaciesito"></div>
-          </div>
-        </div>
+      <li id="desaparecerExpa" class="dropdown"><a class="primer-grupo expa ease-menu" href="{% url 'expancionIndex' %}">Expansiones</a>
+
       </li>
 <!--
     TERCERA OPCION NOTICIAS
@@ -116,15 +107,9 @@
           <div class="flechita"></div>
           <div class="fondodropdown">
             <div class="hyper-espaciesito"></div>
-            <a class="dropdown-item" href="#">Foro</a>
             <a class="dropdown-item" href="#">Preguntas Habituales</a>
-            <a class="dropdown-item" href="#">PvP</a>
-            <a class="dropdown-item" href="#">PvE</a>
             <a class="dropdown-item" href="">Esports</a>
             <a class="dropdown-item" href="#">GSO Tournament</a>
-            <a class="dropdown-item" href="#">Masacre</a>
-            <a class="dropdown-item" href="#">Contenido del juego</a>
-            <a class="dropdown-item" href="#">Gear</a>
             <div class="hyper-espaciesito"></div>
           </div>
         </div>
@@ -180,6 +165,7 @@
             <a class="dropdown-item" href=""><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Ajustes de Tú cuenta</a>
             <a class="dropdown-item" href="{% url 'personajes' %}"><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Personajes</a>
             <a class="dropdown-item" href="{% url 'gestionProductos' %}"><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Gestionar Productos</a>
+            <a class="dropdown-item" href="{% url 'gestionExpancion' %}"><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Gestionar Expanciones</a>
             <a class="dropdown-item" href="{% url 'crearProductos' %}"><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Crear Productos</a>
             <a class="dropdown-item" href="{% url 'logout' %}"><i id="icon-ajustes" class="fa-solid fa-right-from-bracket"></i>Log Out</a>
             <div class="hyper-espaciesito"></div>

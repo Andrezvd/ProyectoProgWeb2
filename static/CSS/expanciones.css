@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+  .hyper-espaciesito{
+    height: 10px;
+}
+  
+  .parrafito {
+    font-size: 16px; /* Tamaño de fuente inicial */
+    text-align: center;
+    width: 50%;
+    margin-left: 340px;
+}
+  
+
+.card{
+    margin-top: 5px;
+    width: 18rem;
+    margin-left: 50px;
+}
+
+
+.imagen_tarjeta{
+    height: 300px;
+}
+
+.estado_label{
+    width: 30%;
+    align-self: center;
+}
+
+.espacio{
+    height: 50px;
+}
+
+.body{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../multimedia/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    z-index: -100;
+
+}
+
+#myVideo{
+    display: none;
+}
+
+.display-2{
+    text-align: center;
+    font-size: 3.2249999999999996rem;
+    line-height: 1.5;
+    font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
+    color: #f0f0f0;
+    text-shadow: 10px 10px 1px transparent, 0 1px 2px rgba(0,0,0,.9);
+    font-weight: 700;
+}
+
+.contenedor-ex{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.card-ex{
+    width: 45%;
+    height: 85vh;
+    background-color: rgba(0,0,0,.9);
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center !important;
+}
+
+.btn{
+    width: 50%;
+}
+
+@media (max-width: 710px) {
+    p {
+      font-size: 0.9rem !important; /* Tamaño de fuente para pantallas más pequeñas */
+    }
+    }
+  
+  @media (max-width: 480px) {
+    p {
+      font-size: 0.8rem !important; /* Tamaño de fuente para pantallas aún más pequeñas */
+    }
+}
