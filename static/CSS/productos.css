@@ -94,12 +94,11 @@
 
 table{
   font-size: 0.9rem;
-  background-color: rgba(255, 255, 255, .6);
+  background:  #202020;
 }
 
 table,th,td{
-  color: rgb(0, 0, 0);
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.553);
 }
 
 
@@ -110,13 +109,38 @@ table,th,td{
 }
 
 .recuadro-info{
+  padding: 5px;
   display: none;
   position: absolute;
   border: 2px solid black;
+  margin: 0 221px;
+  font-family: Verdana,"Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 11px !important;
+  text-align: justify;
+  color: #ff8000;
+  background-color: rgb(4 24 51 / 55%);
+  border-radius: 5px;
+  width: 15%;
+}
+
+.ilv{
+  color: #ffd000;
 }
 
 .hover-producto:hover{
     .recuadro-info{
       display: block;
     }
+}
+
+.nombre{
+  color: #ff8000 !important;
+}
+
+.uso {
+  color: #00ff04e3;
+}
+
+.tblanco{
+  color: aliceblue;
 }

@@ -47,16 +47,39 @@
       <tbody>
         {% for producto in page_obj %}
           <tr>
-            <td 
-              class="hover-producto" type="click"><img class="img-arma" src="{{ producto.imagen.url }}" alt="Sin Imagen" class="icono-producto">
-              <div>{{ producto.nombre|upper }}</div>
+            <td class="hover-producto" type="click">
               <div class="recuadro-info">
                 {{ producto.nombre }}
-                <div class="valores">
-                  {{ producto.vataque }}
-                  {{ producto.daño }}
+              <div class="ilv">
+                Nivel de objeto {{ producto.ilevel }}
+              </div>
+              <div class="unamano tblanco" >
+                Velocidad de ataque {{ producto.vataque }}
+              </div>
+                <div class="valores tblanco">
+                  {{ producto.dañofisico }} p. de daño.
+                </div>
+                <div class="dps tblanco">
+                  ({{ producto.dps }}p. de daño por segundo.)
+                </div>
+                <div class="stat1 tblanco">
+                  {{ producto.stadistica1 }}
+                </div>
+                <div class="stat2 tblanco">
+                  {{ producto.stadistica2 }}
+                </div>
+                <div class="durabilidad tblanco">
+                  Durabilidad 130/130
+                </div>
+                <div class="uso">
+                  {{ producto.descripcion }} 
+                </div>
+                <div class="nivel tblanco">
+                  Requiere nivel {{ producto.nivel }}
                 </div>
               </div>
+              <img class="img-arma" src="{{ producto.imagen.url }}" alt="Sin Imagen" class="icono-producto">
+              <div class="nombre">{{ producto.nombre|upper }}</div>
             </td>
             <td>{{ producto.nivel }}</td>
             <td>{{ producto.caracteristicas }}</td>
@@ -89,6 +112,8 @@
     </div>   
     
   </div>
+  <div class="espacio"></div>
+  <div class="espacio"></div>
 {% endblock content%}
 
 {% block extrajs %} 
