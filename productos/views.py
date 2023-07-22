@@ -3,10 +3,13 @@ from django.http import HttpResponse
 from django.template import loader
 from django.core.paginator import Paginator
 from datetime import datetime
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
 from .forms import ProductoForm
 from .models import Producto,Especializacion,Clase
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
 # Create your views here.
 
 def productosIndex(request):
@@ -36,6 +39,34 @@ def productosIndex(request):
     #Retornar respuesta http
     return HttpResponse(template.render(context,request))
 
+
+
+def compraProducto(request, id):
+    # Obtener el producto que se va a comprar
+    user_coins = request.user.galaxyCoins
+    #Obtener el template
+    template = loader.get_template("compraProductos.html")
+    #Buscar Producto
+    obj = get_object_or_404(Producto, id = id)
+
+    producto_precio = obj.precio
+    #formulario que contiene la instancia
+    if request.method == "POST":
+        if user_coins >= producto_precio:
+            request.user.galaxyCoins -= producto_precio
+            request.user.save()
+            return redirect('productosIndex')
+        else:
+            return HttpResponse("SALDO INSUFICIENTE")
+            
+           
+  
+    #Agregar el contexto
+    context = {}
+    #Retornar respuesta http
+    return HttpResponse(template.render(context,request))
+    
+    
 #Vista para ver detalles de un autor
 def detalleProducto(request, id):
     #Consultar producto

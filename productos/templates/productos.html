@@ -3,6 +3,7 @@
 
 {% block extrahead %} 
 <title>Itemshop</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="{% static '/css/productos.css' %}">
 {% endblock extrahead %}
 
@@ -46,13 +47,23 @@
       <tbody>
         {% for producto in page_obj %}
           <tr>
-            <td><img class="img-arma" src="{{ producto.imagen.url }}" alt="Sin Imagen" class="icono-producto">{{ producto.nombre|upper }}</td>
+            <td 
+              class="hover-producto" type="click"><img class="img-arma" src="{{ producto.imagen.url }}" alt="Sin Imagen" class="icono-producto">
+              <div>{{ producto.nombre|upper }}</div>
+              <div class="recuadro-info">
+                {{ producto.nombre }}
+                <div class="valores">
+                  {{ producto.vataque }}
+                  {{ producto.daño }}
+                </div>
+              </div>
+            </td>
             <td>{{ producto.nivel }}</td>
             <td>{{ producto.caracteristicas }}</td>
             <td>{{ producto.dps }}</td>
             <td>{{ producto.vataque }}</td>
             <td>{{ producto.precio }} Gs</td>
-            <td><button><a href="" class="compra">Comprar</a> </button></td>
+            <td><a type="button-sm" class="btn btn-sm btn-danger" href="{% url 'compraProductos' producto.id %}">Comprar</a></td>
           </tr>
         {% endfor %}
       </tbody>
@@ -81,4 +92,5 @@
 {% endblock content%}
 
 {% block extrajs %} 
+<script src="{% static '/Js/compra.js' %}"></script>
 {% endblock extrajs%}
