@@ -13,4 +13,5 @@ urlpatterns = [
     path('jugabilidad/',views.jugabilidad, name='jugabilidad'),
     path('jdestacados/',views.jdestacados, name='jdestacados'),
     path('historia/',views.historia, name='historia'),
+    path('noticas/',views.noticias, name='noticias'),
 ]

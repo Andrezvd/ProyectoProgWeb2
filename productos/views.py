@@ -3,8 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.core.paginator import Paginator
 from datetime import datetime
-from django.shortcuts import get_object_or_404
-from django.http import JsonResponse
+
 
 from .forms import ProductoForm
 from .models import Producto,Especializacion,Clase
@@ -59,8 +58,6 @@ def compraProducto(request, id):
         else:
             return HttpResponse("SALDO INSUFICIENTE")
             
-           
-  
     #Agregar el contexto
     context = {}
     #Retornar respuesta http

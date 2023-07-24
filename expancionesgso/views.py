@@ -6,7 +6,8 @@ from datetime import datetime
 
 from .forms import ExpancionForm
 from .models import Expancion
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 
@@ -28,6 +29,29 @@ def expancionIndex(request):
     context = {"page_obj":page_obj}
     #Retornar respuesta http
     return HttpResponse(template.render(context,request))
+
+def compraExpancion(request, id):
+    # Obtener el producto que se va a comprar
+    user_coins = request.user.galaxyCoins
+    #Obtener el template
+    template = loader.get_template("compraExpanciones.html")
+    #Buscar Producto
+    obj = get_object_or_404(Expancion, id = id)
+
+    expancion_precio = obj.precio
+    #formulario que contiene la instancia
+    if request.method == "POST":
+        if user_coins >= expancion_precio:
+            request.user.galaxyCoins -= expancion_precio
+            request.user.save()
+            return redirect('expancionIndex')
+        else:
+            return HttpResponse("SALDO INSUFICIENTE")
+        #Agregar el contexto
+    context = {}
+    #Retornar respuesta http
+    return HttpResponse(template.render(context,request))
+
 
 # Vista principal de Gestión de expanciones
 def gestionExpanciones(request):
@@ -100,3 +124,6 @@ def eliminarExpancion(request,id):
     context = {}
     #Retornar respuesta http
     return HttpResponse(template.render(context,request))
+
+
+

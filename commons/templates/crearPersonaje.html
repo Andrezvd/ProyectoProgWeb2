@@ -7,13 +7,7 @@
 {% endblock extrahead%}
 
 {% block content %}
-{% if messages %}
-{% for message in messages %}
-  <div {% if message.tags == 'warning' %} class="alert alert-warning alert-message"{% else %} class="alert alert-success alert-message" {% endif %}>
-      <b class="message-alert">{{ message }}</b>       
-  </div>	
-{% endfor %}
-{% endif %}
+
 <div class="contenedor-espacio">
   <div class="espacio-peque"></div>
 </div>

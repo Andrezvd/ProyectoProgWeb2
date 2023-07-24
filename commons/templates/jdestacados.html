@@ -11,4 +11,32 @@
 <div class="espacio-entre-grande"></div>
 <div class="espacio-entre-grande"></div>
 
+<h1 class="h1-important jd"> TOP JUGADORES </h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Nivel</th>
+        <th>Clase</th>
+        <th>Especializacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for personaje in page_obj %}
+        <tr>
+          <td class="hover-producto" type="click">
+            <div class="nombre">{{ personaje.nombre }}</div>
+          </td>
+          <td>{{ personaje.nivel }}</td>
+          <td>{{ personaje.clase }}</td>
+          <td>{{ personaje.especializacion }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<div class="espacio-entre-grande"></div>
+<div class="espacio-entre-grande"></div>
+
 {% endblock content %}

@@ -20,7 +20,7 @@
               <h5 class="card-title">{{ expancion.nombre|upper }}</h5>
               <p class="card-text">{{ expancion.descripcion }}</p>
               <p class="card-text">{{ expancion.precio }} GalaxyCoins</p>
-              <a href="#" class="btn btn-success">Comprar</a>
+              <a href="{% url 'compraExpanciones' expancion.id %}" class="btn btn-success">Comprar</a>
             </div>
           </div>
       {% endfor %}

@@ -5,6 +5,8 @@ from django.template import loader
 from django.contrib.auth import login
 from django.contrib import messages
 from .models import Personaje
+from django.core.paginator import Paginator
+
 
 from .forms import NewUserForm,crearPersonajeForm
 
@@ -37,14 +39,32 @@ def jugabilidad(request):
     return HttpResponse(template.render(context,request))
 
 def jdestacados(request):
+    
+    personajes_list = Personaje.objects.all().order_by('-nivel')  # Ordenar por nivel descendente
+    
+    
+    paginator = Paginator(personajes_list, 9)
+
+    #Obtener página
+    page_number = request.GET.get('page',0)
+    page_obj = paginator.get_page(page_number)
+    #Obtener el template
     template = loader.get_template("jdestacados.html")
-    context = {}
+    #Agregar el contexto
+    context = {"page_obj": page_obj}
+    #Retornar respuesta http
     return HttpResponse(template.render(context,request))
 
 def historia(request):
     template = loader.get_template("historia.html")
     context = {}
     return HttpResponse(template.render(context,request))
+
+def noticias(request):
+    template = loader.get_template("noticias.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
 
 
 def personajes(request):
@@ -60,6 +80,7 @@ def personajes(request):
     }
 
     return render(request, 'personajes.html', context)
+
 
 
 

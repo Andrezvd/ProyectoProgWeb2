@@ -1,0 +1,28 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+{% block extrahead %} 
+<title>GSO RealizarCompra</title>
+<link rel="stylesheet" href="{% static '/css/compra.css' %}">
+{% endblock extrahead%}
+
+{% block content %} 
+<div class="espacio-entre-grande"></div>
+<div class="espacio-entre-grande"></div>
+<div class="contenido-compra">
+    <h1 class="display-3 h1-important" id="title">comprar</h1>
+    <p>Esta a punto de realizar una compra en Galaxy Sword
+     y NO HAY DEVOLUCIONES ASEGURESE DE HACERLA BIEN</p>
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <p>Esta seguro de que desea COMPRAR este producto ?</p>
+        <input type="submit" value="Si"  class="btn btn-success"  />
+        <a href="{% url 'expancionIndex' %}"  class="btn btn-danger" >Cancel </a>
+    </form> 
+</div>
+
+<div class="espacio-entre-grande"></div>
+<div class="espacio-entre-grande"></div>
+
+{% endblock content%}
