@@ -14,4 +14,7 @@ urlpatterns = [
     path('jdestacados/',views.jdestacados, name='jdestacados'),
     path('historia/',views.historia, name='historia'),
     path('noticas/',views.noticias, name='noticias'),
+    path('esports/',views.esports, name='esports'),
+    path('gsotorneos/',views.gsotorneos, name='gsotorneos'),
+    path('nprgeuntas/',views.preguntas, name='preguntas'),
 ]

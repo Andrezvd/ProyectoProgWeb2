@@ -38,6 +38,21 @@ def jugabilidad(request):
     context = {}
     return HttpResponse(template.render(context,request))
 
+def preguntas(request):
+    template = loader.get_template("preguntas.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+def gsotorneos(request):
+    template = loader.get_template("gsotorneos.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+def esports(request):
+    template = loader.get_template("esports.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
 def jdestacados(request):
     
     personajes_list = Personaje.objects.all().order_by('-nivel')  # Ordenar por nivel descendente

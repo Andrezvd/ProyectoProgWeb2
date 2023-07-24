@@ -107,9 +107,9 @@
           <div class="flechita"></div>
           <div class="fondodropdown">
             <div class="hyper-espaciesito"></div>
-            <a class="dropdown-item" href="#">Preguntas Habituales</a>
-            <a class="dropdown-item" href="">Esports</a>
-            <a class="dropdown-item" href="#">GSO Tournament</a>
+            <a class="dropdown-item" href="{% url 'preguntas' %}">Preguntas Habituales</a>
+            <a class="dropdown-item" href="{% url 'esports' %}">Esports</a>
+            <a class="dropdown-item" href="{% url 'gsotorneos' %}">GSO Tournament</a>
             <div class="hyper-espaciesito"></div>
           </div>
         </div>
@@ -131,7 +131,7 @@
             <div class="hyper-espaciesito"></div>
             <a href="{% url 'productosIndex' %}"><button type="button" class="btn btn-primary iniciar-secion">Item Shop</button></a>
             <div class="hyper-espaciesito"></div>
-            <a class="dropdown-item" href=""><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Ajustes de Tú cuenta</a>
+            <a class="dropdown-item" href="{% url 'ajustes' %}"><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Ajustes de Tú cuenta</a>
             <a class="dropdown-item" href="{% url 'personajes' %}"><i id="icon-ajustes" class="fa-solid fa-gear" style="color: #f2fafd;"></i>Personajes</a>
             <a class="dropdown-item" href="{% url 'logout' %}"><i id="icon-ajustes" class="fa-solid fa-right-from-bracket"></i>Log Out</a>
             <div class="hyper-espaciesito"></div>
@@ -191,7 +191,7 @@
         {% endif %}
 
       <li id="desaparecerBoton1" class="op2li"><a class="op2" href="#">Probar gratis</a></li>
-      <li id="desaparecerBoton2" class="op3li"><a class="op3" href="#">Suscribirse</a></li>
+      <li id="desaparecerBoton2" class="op3li"><a class="op3" href="">Suscribirse</a></li>
       
     </ul>
   </nav>

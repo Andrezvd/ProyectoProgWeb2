@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
-    'user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'productos.apps.ProductosConfig',
     'commons.apps.CommonsConfig',
     'expancionesgso.apps.ExpancionesgsoConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +65,8 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR,"commons/templates"),
             os.path.join(BASE_DIR,'productos/templates)'),
-            os.path.join(BASE_DIR,'expancionesgso/templates)')
+            os.path.join(BASE_DIR,'expancionesgso/templates)'),
+            os.path.join(BASE_DIR,'user/templates)'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {
