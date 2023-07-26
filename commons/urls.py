@@ -17,4 +17,7 @@ urlpatterns = [
     path('esports/',views.esports, name='esports'),
     path('gsotorneos/',views.gsotorneos, name='gsotorneos'),
     path('nprgeuntas/',views.preguntas, name='preguntas'),
+    path('ajustes/',views.ajustes, name='ajustes'),
+    path('suscripcion/',views.suscripcion,name='suscripcion'),
+    path('descargar/',views.descarga,name='descargar')
 ]

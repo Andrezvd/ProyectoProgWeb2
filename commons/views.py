@@ -53,6 +53,17 @@ def esports(request):
     context = {}
     return HttpResponse(template.render(context,request))
 
+def ajustes(request):
+    template = loader.get_template("ajustes.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+
+def suscripcion(request):
+    template = loader.get_template("suscripcion.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
 def jdestacados(request):
     
     personajes_list = Personaje.objects.all().order_by('-nivel')  # Ordenar por nivel descendente
@@ -72,6 +83,11 @@ def jdestacados(request):
 
 def historia(request):
     template = loader.get_template("historia.html")
+    context = {}
+    return HttpResponse(template.render(context,request))
+
+def descarga(request):
+    template = loader.get_template("descargar.html")
     context = {}
     return HttpResponse(template.render(context,request))
 

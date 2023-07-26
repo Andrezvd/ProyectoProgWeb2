@@ -39,19 +39,19 @@
       pero no se ve bbonito no pongo mucho texto.
     </p>
     <div class="espacio-entre"></div>
-    <a class="link" href="#">
+    <a class="link" href="{% url 'resumen' %}">
       <span class="link-subrayado">Explorar Galaxy Sword</span>
     </a>
     <div class="espacio-entre-largo"></div>
     <div class="botones-parrafo">
-      <a class="btn1" href="#">
+      <a class="btn1" href="{% url 'descargar' %}">
         <div class="btn1-outer">
           <div class="btn1-inner">
             <div class="btn1-label" data-text="Comprar Galaxy Sword">Comprar Galaxy Sword</div>
           </div>
         </div>
       </a>
-      <a class="btn2" href="#">
+      <a class="btn2" href="{% url 'suscripcion' %}">
         <div class="btn2-outer">
           <div class="btn2-inner">
             <div class="btn2-label" data-text="Comprar Galaxy Sword">Más información</div>
@@ -144,7 +144,7 @@
         </p>
     </div>
   </a>
-  <a href="#" class="contenedor-big-a-right borde-gris">
+  <a href="{% url 'crearPersonaje' %}" class="contenedor-big-a-right borde-gris">
     <div class="espace-huge "></div>
     <div class="big-info-centrar-texto">
         <div class="espacio-entre"></div>
@@ -255,7 +255,7 @@ TERCER PAR DE CUADROS
     <div class="espacio-entre-largo"></div>
     <div class="botones-parrafo-right">
 
-      <a class="btn2" href="#">
+      <a class="btn2" href="{% url 'mundoabierto' %}">
         <div class="btn2-outer">
           <div class="btn2-inner">
             <div class="btn2-label-card" data-text="Comprar Galaxy Sword">Más información</div>
@@ -297,14 +297,14 @@ TERCER PAR DE CUADROS
     <div class="espacio-entre"></div>
     <div class="espacio-entre-largo"></div>
     <div class="botones-parrafo">
-      <a class="btn1" href="#">
+      <a class="btn1" href="{% url 'descargar' %}">
         <div class="btn1-outer">
           <div class="btn1-inner">
             <div class="btn1-label-card" data-text="Comprar Galaxy Sword">Inicia la aventura</div>
           </div>
         </div>
       </a>
-      <a class="btn2" href="#">
+      <a class="btn2" href="suscripcion">
         <div class="btn2-outer">
           <div class="btn2-inner">
             <div class="btn2-label-card" data-text="Comprar Galaxy Sword">Más información</div>
@@ -326,7 +326,7 @@ TERCER PAR DE CUADROS
 
 
 <div class="contenedor-big-info">
-  <a href="#" class="contenedor-big-a borde-gris contenedor-mediano">
+  <a href="{% url 'jdestacados' %}" class="contenedor-big-a borde-gris contenedor-mediano">
     <div class="espace-huge espace-medium"></div>
     <div class="big-info-centrar-texto short-info-centrar-texto">
         <div class="espacio-entre"></div>
@@ -335,7 +335,7 @@ TERCER PAR DE CUADROS
         <h1 class="titulo-big-info">Lucha por todos tus aliados</h1>
     </div>
   </a>
-  <a href="#" class="contenedor-big-a-right borde-gris contenedor-mediano-right">
+  <a href="{% url 'suscripcion' %}" class="contenedor-big-a-right borde-gris contenedor-mediano-right">
     <div class="espace-huge espace-medium"></div>
     <div class="big-info-centrar-texto short-info-centrar-texto">
         <div class="espacio-entre"></div>

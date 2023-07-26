@@ -41,7 +41,6 @@ class crearPersonajeForm(forms.ModelForm):
             'clase':'Clase',
             'especializacion':'Especializacion',
             'imagen':'Imagen',
-            'imagen3d':'Imagen3d'
         }
 
         widgets = {
@@ -50,7 +49,6 @@ class crearPersonajeForm(forms.ModelForm):
             'clase':forms.TextInput(attrs={'class':'form-control'}),
             'especializacion':forms.TextInput(attrs={'class':'form-control'}),
             'imagen':forms.FileInput(attrs={'class':'form-control'}),
-            'imagen3d':forms.ClearableFileInput(attrs={'class':'form-control'})
         }
     
     def __init__(self, *args, **kwargs):
